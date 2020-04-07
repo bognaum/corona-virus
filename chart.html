@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Corona-virus</title>
+</head>
+<body>
+	<svg id="" width="9000" height="600" viewBox="0 -600 9000 600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<pattern id="grid" width="30" height="20" patternUnits="userSpaceOnUse">
+			<rect x="0" y="0" width="30" height="20" stroke="#333" stroke-width=".5" fill="none"/>
+		</pattern>
+		<rect y="-2000" width="9000" height="2000" fill="url(#grid)"/>
+		<g id="chart"></g>
+	</svg>
+	<script type="text/javascript" src="./chart_files/chart-data.js"></script>
+	<script type="text/javascript">
+		var str = "";
+
+		data.forEach((v,i,a) => {
+			if (i)
+				str += ", ";
+			str += `${i * 30} ${-(v.sick - v.die - v.cured) / 10 * 2}`;
+		});
+
+		var code = `<polyline points="${str}" stroke="#00f" stroke-width="2" fill="none"/>`;
+		chart.innerHTML = code;
+	</script>
+</body>
+</html> 
+
+<!-- 
+var data = [
+	{date: "03.15", sick: 3,},
+	{date: "03.16", sick: 5,},
+	{date: "03.17", sick: 7,},
+	{date: "03.18", sick: 14,},
+	{date: "03.19", sick: 16,},
+	{date: "03.20", sick: 26,},
+	{date: "03.21", sick: 41,},
+	{date: "03.22", sick: 47,},
+	{date: "03.23", sick: 73,},
+	{date: "03.24", sick: 84,},
+	{date: "03.25", sick: 113,},
+	{date: "03.26", sick: 156,},
+	{date: "03.27", sick: 218,},
+	{date: "03.28", sick: 311,},
+	{date: "03.29", sick: 418,},
+	{date: "03.30", sick: 480,},
+	{date: "03.31", sick: 549,},
+	{date: "04.01", sick: 669,},
+	{date: "04.02", sick: 804,},
+	{date: "04.03", sick: 942,},
+	{date: "04.04", sick: 1096,},
+	{date: "04.05", sick: 1251,},
+
+];
+
+var data = [
+	{date: "03.15", sick: 3,    die: 0   , cured: 0   ,},
+	{date: "03.16", sick: 5,    die: null, cured: null,},
+	{date: "03.17", sick: 7,    die: 0   , cured: 0   ,},
+	{date: "03.18", sick: 14,   die: 2   , cured: 0   ,},
+	{date: "03.19", sick: 16,   die: 2   , cured: 0   ,},
+	{date: "03.20", sick: 26,   die: 3   , cured: 0   ,},
+	{date: "03.21", sick: 41,   die: 3   , cured: 1   ,},
+	{date: "03.22", sick: 47,   die: 3   , cured: 1   ,},
+	{date: "03.23", sick: 73,   die: 3   , cured: 1   ,},
+	{date: "03.24", sick: 84,   die: 3   , cured: 1   ,},
+	{date: "03.25", sick: 113,  die: 4   , cured: 1   ,},
+	{date: "03.26", sick: 156,  die: 5   , cured: 1   ,},
+	{date: "03.27", sick: 218,  die: 5   , cured: 4   ,},
+	{date: "03.28", sick: 311,  die: 8   , cured: 5   ,},
+	{date: "03.29", sick: 418,  die: 9   , cured: 5   ,},
+	{date: "03.30", sick: 480,  die: 11  , cured: 6   ,},
+	{date: "03.31", sick: 549,  die: 13  , cured: 8   ,},
+	{date: "04.01", sick: 669,  die: 17  , cured: 10  ,},
+	{date: "04.02", sick: 804,  die: 20  , cured: 13  ,},
+	{date: "04.03", sick: 942,  die: 23  , cured: 19  ,},
+	{date: "04.04", sick: 1096, die: 28  , cured: 23  ,},
+	{date: "04.05", sick: 1251, die: 32  , cured: 25  ,},
+
+];
+
+ -->
