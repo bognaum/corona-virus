@@ -15,16 +15,16 @@
 	</svg>
 	<script type="text/javascript" src="./chart_files/chart-data.js"></script>
 	<script type="text/javascript">
-		var str = "";
+		var sickedStr = "";
 
 		data.forEach((v,i,a) => {
 			if (i)
-				str += ", ";
-			str += `${i * 30} ${-(v.sick - v.die - v.cured) / 10 * 2}`;
+				sickedStr += ", ";
+			sickedStr += `${i * 30} ${-(v.sick - v.die - v.cured) / 10 * 2}`;
 		});
 
 		var code = `
-			<polyline points="${str}" stroke="#00f" stroke-width="2" fill="none"/>
+			<polyline points="${sickedStr}" stroke="#00f" stroke-width="2" fill="none"/>
 		`;
 		chart.innerHTML = code;
 	</script>
