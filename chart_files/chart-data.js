@@ -1,6 +1,6 @@
 var data = [
 	{date: "03.15", sick: 3,    die: 0   , cured: 0   ,},
-	{date: "03.16", sick: 5,    die: null, cured: null,},
+	{date: "03.16", sick: 5,    die: 0   , cured: 0   ,}, // die: null, cured: null,
 	{date: "03.17", sick: 7,    die: 0   , cured: 0   ,},
 	{date: "03.18", sick: 14,   die: 2   , cured: 0   ,},
 	{date: "03.19", sick: 16,   die: 2   , cured: 0   ,},
