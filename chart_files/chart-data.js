@@ -21,7 +21,8 @@ var data = [
 	{date: "04.03", sick: 942,  die: 23  , cured: 19  ,},
 	{date: "04.04", sick: 1096, die: 28  , cured: 23  ,},
 	{date: "04.05", sick: 1251, die: 32  , cured: 25  ,},
-	{date: "04.06", sick: 1462, die: 45  , cured: 28  ,},
-	{date: "04.07", sick: 1668, die: 52  , cured: 35  ,},
+	{date: "04.06", sick: 1319, die: 38  , cured: 28  ,},
+	{date: "04.07", sick: 1462, die: 45  , cured: 28  ,},
+	{date: "04.08", sick: 1668, die: 52  , cured: 35  ,},
 
 ];
