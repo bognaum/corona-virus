@@ -41,7 +41,7 @@ data.forEach((v,i,a) => {
 
 var code = `
 	<polyline points="${sickedStr  }" stroke="#00f" stroke-width="2" fill="none"/>
-	<polyline points="${d_sickStr  }" stroke="#0f0" stroke-width="2" fill="none"/>
+	<polyline points="${d_sickStr  }" stroke="#000" stroke-width="2" fill="none"/>
 	<polyline points="${d_sickedStr}" stroke="#f00" stroke-width="2" fill="none"/>
 `;
 
