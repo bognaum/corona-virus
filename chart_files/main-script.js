@@ -23,13 +23,13 @@ data.forEach((v,i,a) => {
 	let code = `
 		<tr>
 			<td>${i + 1}</td>
-			<td>${v.date}</td>
-			<td>${v.sick}</td>
-			<td>${d_sick}</td>
-			<td>${v.die}</td>
-			<td>${v.cured}</td>
-			<td>${sicked}</td>
-			<td>${d_sicked}</td>
+			<td>${v.date}</td>      <!-- дата -->
+			<td>${v.sick}</td>      <!-- случаев заражения -->
+			<td>${d_sick}</td>      <!-- прирост случаев за сутки -->
+			<td>${v.die}</td>       <!-- умерло -->
+			<td>${v.cured}</td>     <!-- выздоровило -->
+			<td>${sicked}</td>      <!-- больных  -->
+			<td>${d_sicked}</td>    <!-- прирост больных за сутки -->
 		</tr>
 	`;
 
