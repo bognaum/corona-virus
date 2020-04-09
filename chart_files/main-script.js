@@ -1,12 +1,14 @@
 var 
 	prevSick    = 0,
 	prevSicked  = 0,
+	sickStr     = "",
 	sickedStr   = "",
 	d_sickStr   = "",
 	d_sickedStr = "";
 
 data.forEach((v,i,a) => {
 	if (i) {
+		sickStr     += ", ";
 		sickedStr   += ", ";
 		d_sickStr   += ", ";
 		d_sickedStr += ", ";
@@ -16,6 +18,7 @@ data.forEach((v,i,a) => {
 		d_sick   = v.sick - prevSick,
 		d_sicked = sicked - prevSicked;
 
+	sickStr     += `${(i * 30) + 15} ${-v.sick   / 10 * 2}`;
 	sickedStr   += `${(i * 30) + 15} ${-sicked   / 10 * 2}`;
 	d_sickStr   += `${(i * 30) + 15} ${-d_sick   / 10 * 2}`;
 	d_sickedStr += `${(i * 30) + 15} ${-d_sicked / 10 * 2}`;
@@ -40,6 +43,7 @@ data.forEach((v,i,a) => {
 });
 
 var code = `
+	<polyline points="${sickStr    }" stroke="#999" stroke-width="2" fill="none"/>
 	<polyline points="${sickedStr  }" stroke="#00f" stroke-width="2" fill="none"/>
 	<polyline points="${d_sickStr  }" stroke="#000" stroke-width="2" fill="none"/>
 	<polyline points="${d_sickedStr}" stroke="#f00" stroke-width="2" fill="none"/>
