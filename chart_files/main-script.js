@@ -25,11 +25,11 @@ data.forEach((v,i,a) => {
 			<td>${i + 1}</td>
 			<td>${v.date}</td>
 			<td>${v.sick}</td>
-			<td>${v.sick - prevSick}</td>
+			<td>${d_sick}</td>
 			<td>${v.die}</td>
 			<td>${v.cured}</td>
-			<td>${v.sick - v.die - v.cured}</td>
-			<td>${v.sick - v.die - v.cured - prevSicked}</td>
+			<td>${sicked}</td>
+			<td>${d_sicked}</td>
 		</tr>
 	`;
 
