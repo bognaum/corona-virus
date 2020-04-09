@@ -24,5 +24,6 @@ var data = [
 	{date: "04.06", sick: 1319, die: 38  , cured: 28  ,},
 	{date: "04.07", sick: 1462, die: 45  , cured: 28  ,},
 	{date: "04.08", sick: 1668, die: 52  , cured: 35  ,},
+	{date: "04.09", sick: 1892, die: 57  , cured: 45  ,},
 
 ];
