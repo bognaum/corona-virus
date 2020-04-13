@@ -14,13 +14,23 @@
 <body>
 	<svg id="svg_chart_1" width="4500" height="600" viewBox="0 -1200 9000 1200" version="1.1" xmlns="http://www.w3.org/2000/svg">
 		<pattern id="grid" width="210" height="20" patternUnits="userSpaceOnUse">
-			<rect x="0"   y="0" width="30" height="20" stroke="#333" stroke-width=".5" fill="#fff"/>
-			<rect x="30"  y="0" width="30" height="20" stroke="#333" stroke-width=".5" fill="#eee"/>
-			<rect x="60"  y="0" width="30" height="20" stroke="#333" stroke-width=".5" fill="#eee"/>
-			<rect x="90"  y="0" width="30" height="20" stroke="#333" stroke-width=".5" fill="#eee"/>
-			<rect x="120" y="0" width="30" height="20" stroke="#333" stroke-width=".5" fill="#eee"/>
-			<rect x="150" y="0" width="30" height="20" stroke="#333" stroke-width=".5" fill="#eee"/>
-			<rect x="180" y="0" width="30" height="20" stroke="#333" stroke-width=".5" fill="#fff"/>
+			<style>
+				#grid rect {
+					stroke: #333;
+					stroke-width: .5;
+					fill: #fff;
+				}
+				#grid rect.dey-off {
+					fill: #eee;
+				}
+			</style>
+			<rect x="0"   y="0" width="30" height="20" class="dey-off"/>
+			<rect x="30"  y="0" width="30" height="20"/>
+			<rect x="60"  y="0" width="30" height="20"/>
+			<rect x="90"  y="0" width="30" height="20"/>
+			<rect x="120" y="0" width="30" height="20"/>
+			<rect x="150" y="0" width="30" height="20"/>
+			<rect x="180" y="0" width="30" height="20" class="dey-off"/>
 		</pattern>
 		<rect y="-2000" width="9000" height="2000" fill="url(#grid)"/>
 		<g id="chart"></g>
