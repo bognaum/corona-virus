@@ -52,9 +52,10 @@ var code = `
 chart.innerHTML = code;
 
 svg_chart_1.onmousemove = function(e) {
+	var kXY = 2;
 	var bcr = this.getBoundingClientRect();
 	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
-	ch1date.textContent    = calendar[Math.floor(e.offsetX / 30)];
+	ch1date.textContent    = calendar[Math.floor(e.offsetX / 30 * kXY)];
 	// ch1vickDay.textContent = deys[(Math.floor(e.offsetX / 30) - 1) % 7];
-	ch1value.textContent   = (-e.offsetY + bcr.height) * 10 / 2;
+	ch1value.textContent   = (-e.offsetY + bcr.height) * 10 / 2 * kXY;
 }
