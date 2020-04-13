@@ -58,4 +58,6 @@ svg_chart_1.onmousemove = function(e) {
 	ch1date.textContent    = calendar[Math.floor(e.offsetX / 30 * kXY)];
 	// ch1vickDay.textContent = deys[(Math.floor(e.offsetX / 30) - 1) % 7];
 	ch1value.textContent   = (-e.offsetY + bcr.height) * 10 / 2 * kXY;
+
+	ch1title.style.marginLeft = e.offsetX+"px";
 }
