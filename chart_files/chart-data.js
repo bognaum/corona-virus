@@ -29,5 +29,13 @@ var data = [
 	{date: "2020.04.11", sick: 2511, die: 73  , cured: 79  , tested: 26577},
 	{date: "2020.04.12", sick: 2777, die: 83  , cured: 89  , tested: 30314},
 	{date: "2020.04.13", sick: 3102, die: 93  , cured: 97  , tested: 32496},
+	{date: "2020.04.14", sick: 3372, die: 98  , cured: 119 , tested: 35153},
+	{date: "2020.04.15", sick: 3764, die: 108 , cured: 143 , tested: 39084},
+	{date: "2020.04.16", sick: 4161, die: 116 , cured: 186 , tested: 42823},
+	{date: "2020.04.17", sick: 4662, die: 125 , cured: 246 , tested: 47096},
+	{date: "2020.04.18", sick: 5106, die: 133 , cured: 275 , tested: 52534},
+	{date: "2020.04.19", sick: 5449, die: 141 , cured: 347 , tested: 57111},
+	{date: "2020.04.20", sick: 5710, die: 151 , cured: 359 , tested: 58093},
+	{date: "2020.04.21", sick: 6125, die: 161 , cured: 367 , tested: 61997},
 
 ];
