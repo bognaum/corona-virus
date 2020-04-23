@@ -27,7 +27,7 @@ data.forEach((v,i,a) => {
 	d_sickStr   += `${(i * 30) + 15} ${-d_sick   / 10 * 2}`;
 	d_sickedStr += `${(i * 30) + 15} ${-d_sicked / 10 * 2}`;
 
-	let code = `
+	/*let code = `
 		<tr>
 			<td title="№"                       >${i + 1   }</td>
 			<td title="дата"                    >${v.date  }</td>
@@ -40,6 +40,25 @@ data.forEach((v,i,a) => {
 			<td title="больных "                >${sicked  }</td>
 			<td title="прирост больных за сутки">${d_sicked}</td>
 		</tr>
+	`;*/
+
+	let code = `
+		<tr>
+			<td rowspan="2" title="№"           >${i + 1   }</td>
+			<td rowspan="2" title="дата"        >${v.date  }</td>
+			<td title="за сутки"                >Δ</td>
+			<td title="прирост случаев за сутки">${d_sick  }</td>
+			<td title="умерло за сутки"         >${d_Die   }</td>
+			<td title="выздоровило за сутки"    >${d_Cured }</td>
+			<td title="прирост больных за сутки">${d_sicked}</td>
+		</tr>
+		<tr>
+			<td title="всего"                   >Σ</td>
+			<td title="случаев заражения всего" >${v.sick  }</td>
+			<td title="умерло всего"            >${v.die   }</td>
+			<td title="выздоровило всего"       >${v.cured }</td>
+			<td title="больных всего"           >${sicked  }</td>
+		<tr>
 	`;
 
 	tBody.innerHTML += code;
