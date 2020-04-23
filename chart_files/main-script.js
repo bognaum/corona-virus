@@ -1,6 +1,8 @@
 var 
 	prevSick    = 0,
 	prevSicked  = 0,
+	prevDie     = 0,
+	prevCured   = 0,
 	sickStr     = "",
 	sickedStr   = "",
 	d_sickStr   = "",
@@ -16,7 +18,9 @@ data.forEach((v,i,a) => {
 	let 
 		sicked   = v.sick - v.die - v.cured,
 		d_sick   = v.sick - prevSick,
-		d_sicked = sicked - prevSicked;
+		d_sicked = sicked - prevSicked,
+		d_Die    = v.die  - prevDie,
+		d_Cured  = v.cured - prevCured;
 
 	sickStr     += `${(i * 30) + 15} ${-v.sick   / 10 * 2}`;
 	sickedStr   += `${(i * 30) + 15} ${-sicked   / 10 * 2}`;
@@ -30,7 +34,9 @@ data.forEach((v,i,a) => {
 			<td title="случаев заражения"       >${v.sick  }</td>
 			<td title="прирост случаев за сутки">${d_sick  }</td>
 			<td title="умерло"                  >${v.die   }</td>
+			<td title="умерло за сутки"         >${d_Die   }</td>
 			<td title="выздоровило"             >${v.cured }</td>
+			<td title="выздоровило за сутки"    >${d_Cured }</td>
 			<td title="больных "                >${sicked  }</td>
 			<td title="прирост больных за сутки">${d_sicked}</td>
 		</tr>
@@ -40,6 +46,8 @@ data.forEach((v,i,a) => {
 
 	prevSick = v.sick;
 	prevSicked = sicked;
+	prevDie     = v.die;
+	prevCured   = v.cured;
 });
 
 var code = `
