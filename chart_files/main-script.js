@@ -16,10 +16,10 @@ data.forEach((v,i,a) => {
 		d_sickedStr += ", ";
 	}
 	let 
-		sicked   = v.sick - v.die - v.cured,
-		d_sick   = v.sick - prevSick,
-		d_sicked = sicked - prevSicked,
-		d_Die    = v.die  - prevDie,
+		sicked   = v.sick  - v.die - v.cured,
+		d_sick   = v.sick  - prevSick,
+		d_sicked = sicked  - prevSicked,
+		d_Die    = v.die   - prevDie,
 		d_Cured  = v.cured - prevCured;
 
 	sickStr     += `${(i * 30) + 15} ${-v.sick   / 10 * 2}`;
