@@ -40,5 +40,8 @@ var data = [
 	{date: "2020.04.22", sick: 6592, die: 174 , cured: 424 , tested: 67520}, // cured: 467
 	{date: "2020.04.23", sick: 7170, die: 187 , cured: 504 , tested: 72296},
 	{date: "2020.04.24", sick: 7647, die: 193 , cured: 601 , tested: 77752},
+	{date: "2020.04.25", sick: 8125, die: 201 , cured: 782 , tested: 83577},
+	{date: "2020.04.26", sick: 8617, die: 209 , cured: 840 , tested: 89373},
+	{date: "2020.04.27", sick: 9009, die: 220 , cured: 864 , tested: 93519},
 
 ];
