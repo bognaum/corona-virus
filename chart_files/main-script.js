@@ -68,12 +68,12 @@ var code = `
 chart.innerHTML = code;
 
 svg_chart_1.onmousemove = function(e) {
-	var kXY = 3;
+	var kXY = 20 / 6;
 	var bcr = this.getBoundingClientRect();
 	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
 	ch1date.textContent    = calendar[Math.floor(e.offsetX / 30 * kXY)];
 	// ch1vickDay.textContent = deys[(Math.floor(e.offsetX / 30) - 1) % 7];
-	ch1value.textContent   = (-e.offsetY + bcr.height) * 10 / 2 * kXY;
+	ch1value.textContent   = Math.round((-e.offsetY + bcr.height) * 10 / 2 * kXY);
 
 	ch1title.style.marginLeft = e.offsetX+"px";
 }
