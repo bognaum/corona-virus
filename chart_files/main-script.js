@@ -3,6 +3,7 @@ var
 	prevSicked  = 0,
 	prevDie     = 0,
 	prevCured   = 0,
+	prevTested  = 0,
 	sickStr     = "",
 	sickedStr   = "",
 	d_sickStr   = "",
@@ -20,7 +21,10 @@ data.forEach((v,i,a) => {
 		d_sick   = v.sick  - prevSick,
 		d_sicked = sicked  - prevSicked,
 		d_Die    = v.die   - prevDie,
-		d_Cured  = v.cured - prevCured;
+		d_Cured  = v.cured - prevCured,
+		tested   = v.tested || 0,
+		testedNoData = v.tested === undefined || v.tested === null,
+		d_tested = tested  - prevTested;
 
 	sickStr     += `${(i * 30) + 15} ${-v.sick   / 10 * 2}`;
 	sickedStr   += `${(i * 30) + 15} ${-sicked   / 10 * 2}`;
@@ -40,6 +44,7 @@ data.forEach((v,i,a) => {
 			<td class="delta"  title="умерло за сутки"         >${d_Die   }</td>
 			<td class="delta"  title="выздоровило за сутки"    >${d_Cured }</td>
 			<td class="delta"  title="прирост больных за сутки">${d_sicked}</td>
+			<td class="delta"  title="тестов за сутки"         >${testedNoData ? "-" : d_tested}</td>
 		</tr>
 		<tr>
 			<td class="common" title="всего"                   >Σ</td>
@@ -47,6 +52,7 @@ data.forEach((v,i,a) => {
 			<td class="common" title="умерло всего"            >${v.die   }</td>
 			<td class="common" title="выздоровило всего"       >${v.cured }</td>
 			<td class="common" title="больных всего"           >${sicked  }</td>
+			<td class="common" title="тестов всего"            >${testedNoData ? "-" : v.tested}</td>
 		<tr>
 	`;
 
@@ -56,6 +62,7 @@ data.forEach((v,i,a) => {
 	prevSicked = sicked;
 	prevDie     = v.die;
 	prevCured   = v.cured;
+	prevTested  = tested;
 });
 
 var code = `
