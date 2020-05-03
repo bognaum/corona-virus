@@ -8,6 +8,9 @@ var
 	sickedStr   = "",
 	d_sickStr   = "",
 	d_sickedStr = "";
+let 
+	d_sickArr   = [],
+	d_sickedArr = [];
 
 data.forEach((v,i,a) => {
 	if (i) {
@@ -25,6 +28,9 @@ data.forEach((v,i,a) => {
 		tested   = v.tested || 0,
 		testedNoData = v.tested === undefined || v.tested === null,
 		d_tested = tested  - prevTested;
+
+	d_sickArr.push(d_sick);
+	d_sickedArr.push(d_sicked);
 
 	sickStr     += `${(i * 30) + 15} ${-v.sick   / 10 * 2}`;
 	sickedStr   += `${(i * 30) + 15} ${-sicked   / 10 * 2}`;
@@ -65,17 +71,40 @@ data.forEach((v,i,a) => {
 	prevTested  = tested;
 });
 
-var code = `
-	<polyline points="${sickStr    }" stroke="#999" stroke-width="2" fill="none"/>
-	<polyline points="${sickedStr  }" stroke="#00f" stroke-width="2" fill="none"/>
-	<polyline points="${d_sickStr  }" stroke="#000" stroke-width="2" fill="none"/>
-	<polyline points="${d_sickedStr}" stroke="#f00" stroke-width="2" fill="none"/>
-`;
 
-chart.innerHTML = code;
+chart_1.innerHTML = 
+	`
+		<polyline 
+			points="${sickStr    }" 
+				stroke="#999" stroke-width="5" fill="none" stroke-linejoin="round"/>
+		<polyline 
+			points="${sickedStr  }" 
+				stroke="#00f" stroke-width="5" fill="none" stroke-linejoin="round"/>
+		<polyline 
+			points="${d_sickStr  }" 
+				stroke="#000" stroke-width="5" fill="none" stroke-linejoin="round"/>
+		<polyline 
+			points="${d_sickedStr}" 
+				stroke="#f00" stroke-width="5" fill="none" stroke-linejoin="round"/>
+	`;
+
+chart_2.innerHTML =
+	`
+		<polyline 
+			points="${d_sickArr  .map((v,i,a) => `${3 + i * 6} ${-v / 5}`).join(", ")}" 
+			stroke="#000" stroke-width="2" fill="none"
+			stroke-linejoin="round"
+		/>
+		<polyline 
+			points="${d_sickedArr.map((v,i,a) => `${3 + i * 6} ${-v / 5}`).join(", ")}" 
+			stroke="#f00" stroke-width="2" fill="none"
+			stroke-linejoin="round"
+		/>
+	`;
+
 
 svg_chart_1.onmousemove = function(e) {
-	var kXY = 20 / 6;
+	var kXY = 30 / 6;
 	var bcr = this.getBoundingClientRect();
 	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
 	ch1date.textContent    = calendar[Math.floor(e.offsetX / 30 * kXY)];
@@ -83,4 +112,16 @@ svg_chart_1.onmousemove = function(e) {
 	ch1value.textContent   = Math.round((-e.offsetY + bcr.height) * 10 / 2 * kXY);
 
 	ch1title.style.marginLeft = e.offsetX+"px";
+}
+
+svg_chart_2.onmousemove = function(e) {
+	var kY = 30 / 6;
+	var kX = 1;
+	var bcr = this.getBoundingClientRect();
+	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
+	ch2date.textContent    = calendar[Math.floor(e.offsetX / 30 * kY)];
+	// ch1vickDay.textContent = deys[(Math.floor(e.offsetX / 30) - 1) % 7];
+	ch2value.textContent   = Math.round((-e.offsetY + bcr.height) * 10 / 2 * kX);
+
+	ch2title.style.marginLeft = e.offsetX+"px";
 }
