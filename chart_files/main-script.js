@@ -116,12 +116,12 @@ svg_chart_1.onmousemove = function(e) {
 
 svg_chart_2.onmousemove = function(e) {
 	var kY = 30 / 6;
-	var kX = 1;
+	var kX = 5;
 	var bcr = this.getBoundingClientRect();
 	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
 	ch2date.textContent    = calendar[Math.floor(e.offsetX / 30 * kY)];
 	// ch1vickDay.textContent = deys[(Math.floor(e.offsetX / 30) - 1) % 7];
-	ch2value.textContent   = Math.round((-e.offsetY + bcr.height) * 10 / 2 * kX);
+	ch2value.textContent   = Math.round((-e.offsetY + bcr.height) * kX - 500);
 
 	ch2title.style.marginLeft = e.offsetX+"px";
 }
