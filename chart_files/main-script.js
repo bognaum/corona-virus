@@ -45,8 +45,8 @@ data.forEach((v,i,a) => {
 			<td rowspan="2" data-week-d="${i % 7}" title="дата">${dateStr }</td>
 			<td class="delta"  title="за сутки"                >Δ</td>
 			<td class="delta"  title="прирост случаев за сутки">${d_sick  }</td>
-			<td rowspan="2" title="Прирост случаев заражения в процентах."
-				>${Math.round(d_sick / v.sick * 100 *100) / 100}%</td>
+			<!-- <td rowspan="2" title="Прирост случаев заражения в процентах."
+				>${Math.round(d_sick / v.sick * 100 *100) / 100}%</td> -->
 			<td class="delta"  title="умерло за сутки"         >${d_Die   }</td>
 			<td class="delta"  title="выздоровило за сутки"    >${d_Cured }</td>
 			<td class="delta"  title="прирост больных за сутки">${d_sicked}</td>
