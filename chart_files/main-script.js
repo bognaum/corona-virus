@@ -32,10 +32,10 @@ data.forEach((v,i,a) => {
 	d_sickArr.push(d_sick);
 	d_sickedArr.push(d_sicked);
 
-	sickStr     += `${(i * 30) + 15} ${-v.sick   / 10 * 2}`;
-	sickedStr   += `${(i * 30) + 15} ${-sicked   / 10 * 2}`;
-	d_sickStr   += `${(i * 30) + 15} ${-d_sick   / 10 * 2}`;
-	d_sickedStr += `${(i * 30) + 15} ${-d_sicked / 10 * 2}`;
+	sickStr     += `${(i * 30) + 15} ${-v.sick   / 10}`;
+	sickedStr   += `${(i * 30) + 15} ${-sicked   / 10}`;
+	d_sickStr   += `${(i * 30) + 15} ${-d_sick   / 10}`;
+	d_sickedStr += `${(i * 30) + 15} ${-d_sicked / 10}`;
 
 	let dateStr = v.date.split(".").reverse().join("-");
 
@@ -105,11 +105,13 @@ chart_2.innerHTML =
 
 svg_chart_1.onmousemove = function(e) {
 	var kXY = 30 / 6;
+	var kY = 30 / 6 * 2;
+	var kX = 30 / 6;
 	var bcr = this.getBoundingClientRect();
 	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
-	ch1date.textContent    = calendar[Math.floor(e.offsetX / 30 * kXY)];
+	ch1date.textContent    = calendar[Math.floor(e.offsetX / 30 * kX)];
 	// ch1vickDay.textContent = deys[(Math.floor(e.offsetX / 30) - 1) % 7];
-	ch1value.textContent   = Math.round((-e.offsetY + bcr.height) * 10 / 2 * kXY);
+	ch1value.textContent   = Math.round((-e.offsetY + bcr.height) * 10 / 2 * kY);
 
 	ch1title.style.marginLeft = e.offsetX+"px";
 }

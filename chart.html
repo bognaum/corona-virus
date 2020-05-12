@@ -38,7 +38,7 @@
 		version="1.1" 
 		xmlns="http://www.w3.org/2000/svg"
 	>
-		<pattern id="grid" width="210" height="20" patternUnits="userSpaceOnUse">
+		<pattern id="grid" width="210" height="100" patternUnits="userSpaceOnUse">
 			<style>
 				#grid rect {
 					stroke: #999;
@@ -49,15 +49,19 @@
 					fill: #eee;
 				}
 			</style>
-			<rect x="0"   y="0" width="30" height="20" class="dey-off"/>
-			<rect x="30"  y="0" width="30" height="20"/>
-			<rect x="60"  y="0" width="30" height="20"/>
-			<rect x="90"  y="0" width="30" height="20"/>
-			<rect x="120" y="0" width="30" height="20"/>
-			<rect x="150" y="0" width="30" height="20"/>
-			<rect x="180" y="0" width="30" height="20" class="dey-off"/>
+			<rect x="0"   y="0" width="30" height="100" class="dey-off"/>
+			<rect x="30"  y="0" width="30" height="100"/>
+			<rect x="60"  y="0" width="30" height="100"/>
+			<rect x="90"  y="0" width="30" height="100"/>
+			<rect x="120" y="0" width="30" height="100"/>
+			<rect x="150" y="0" width="30" height="100"/>
+			<rect x="180" y="0" width="30" height="100" class="dey-off"/>
 		</pattern>
-		<rect y="-4000" width="20000" height="4000" fill="url(#grid)"/>
+		<pattern id="grid_1" width="210" height="1000" patternUnits="userSpaceOnUse">
+			<rect width="210" height="1000" fill="url(#grid)"/>
+			<line x1="0" y1="0" x2="5000" y2="0" stroke="#777" stroke-width="3"/>
+		</pattern>
+		<rect y="-4000" width="20000" height="4000" fill="url(#grid_1)"/>
 		<g id="chart_1"></g>
 	</svg>
 	<p>
