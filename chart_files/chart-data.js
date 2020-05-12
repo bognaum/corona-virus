@@ -57,5 +57,6 @@ var data = [
 	{date: "2020.05.09", sick: 14710, die: 376 , cured: 2909, tested: 167107},
 	{date: "2020.05.10", sick: 15232, die: 391 , cured: 3060, tested: 176403},
 	{date: "2020.05.11", sick: 15648, die: 408 , cured: 3288, tested: 181552},
+	{date: "2020.05.12", sick: 16023, die: 425 , cured: 3373, tested: 187307},
 
 ];
