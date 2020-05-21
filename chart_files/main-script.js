@@ -76,28 +76,28 @@ chart_1.innerHTML =
 	`
 		<polyline 
 			points="${sickStr    }" 
-				stroke="#999" stroke-width="5" fill="none" stroke-linejoin="round"/>
+				stroke="#999" stroke-width="10" fill="none" stroke-linejoin="round"/>
 		<polyline 
 			points="${sickedStr  }" 
-				stroke="#77f" stroke-width="5" fill="none" stroke-linejoin="round"/>
+				stroke="#77f" stroke-width="10" fill="none" stroke-linejoin="round"/>
 		<polyline 
 			points="${d_sickStr  }" 
-				stroke="#555" stroke-width="5" fill="none" stroke-linejoin="round"/>
+				stroke="#555" stroke-width="10" fill="none" stroke-linejoin="round"/>
 		<polyline 
 			points="${d_sickedStr}" 
-				stroke="#f77" stroke-width="5" fill="none" stroke-linejoin="round"/>
+				stroke="#f77" stroke-width="10" fill="none" stroke-linejoin="round"/>
 	`;
 
 chart_2.innerHTML =
 	`
 		<polyline 
 			points="${d_sickArr  .map((v,i,a) => `${3 + i * 6} ${-v / 5}`).join(", ")}" 
-			stroke="#555" stroke-width="2" fill="none"
+			stroke="#555" stroke-width="3" fill="none"
 			stroke-linejoin="round"
 		/>
 		<polyline 
 			points="${d_sickedArr.map((v,i,a) => `${3 + i * 6} ${-v / 5}`).join(", ")}" 
-			stroke="#f77" stroke-width="2" fill="none"
+			stroke="#f77" stroke-width="3" fill="none"
 			stroke-linejoin="round"
 		/>
 	`;
