@@ -63,10 +63,17 @@
 		</pattern>
 		<rect y="-4000" width="20000" height="4000" fill="url(#grid_1)"/>
 		<g id="chart_1"></g>
+		<g id="chart_1_cursor"></g>
 	</svg>
 	<p>
 		<span id="ch1title" style="display: inline-block; white-space: nowrap;">
-			<span id="ch1date"></span> : <b><span id="ch1value"></span></span></b>
+			<span id="ch1date"></span> : <!-- <b><span id="ch1value"></span></span></b> -->
+			<b>
+				<span id="ch1_sick" style="color: #999;"></span>
+				<span id="ch1_sicked" style="color: #77f;"></span>
+				<span id="ch1_d_sick" style="color: #555;"></span>
+				<span id="ch1_d_sicked" style="color: #f77;"></span>
+			</b>
 		</span>
 	</p>
 	<svg 
@@ -101,10 +108,17 @@
 		<rect y="-200" width="5000" height="300" fill="url(#grid_2)"/>
 		<line x1="0" y1="0" x2="5000" y2="0" stroke="#777" stroke-width="1"/>
 		<g id="chart_2"></g>
+		<g id="chart_2_cursor"></g>
 	</svg>
 	<p>
 		<span id="ch2title" style="display: inline-block; white-space: nowrap;">
-			<span id="ch2date"></span> : <b><span id="ch2value"></span></span></b>
+			<span id="ch2date"></span> : <!-- <b><span id="ch2value"></span></span></b> -->
+			<b>
+				<!-- <span id="ch2_sick" style="color: #999;"></span> -->
+				<!-- <span id="ch2_sicked" style="color: #77f;"></span> -->
+				<span id="ch2_d_sick" style="color: #555;"></span>
+				<span id="ch2_d_sicked" style="color: #f77;"></span>
+			</b>
 		</span>
 	</p>
 	<table border="" cellpadding="10" cellspacing="0" style="

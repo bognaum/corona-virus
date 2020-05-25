@@ -109,21 +109,44 @@ svg_chart_1.onmousemove = function(e) {
 	var kX = 30 / 6;
 	var bcr = this.getBoundingClientRect();
 	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
-	ch1date.textContent    = calendar[Math.floor(e.offsetX / 30 * kX)];
+	const deyNum = Math.floor(e.offsetX / 30 * kX);
+	ch1date.textContent    = calendar[deyNum];
 	// ch1vickDay.textContent = deys[(Math.floor(e.offsetX / 30) - 1) % 7];
-	ch1value.textContent   = Math.round((-e.offsetY + bcr.height) * 10 / 2 * kY);
+	// ch1value.textContent   = Math.round((-e.offsetY + bcr.height) * 10 / 2 * kY);
+	const cursorX = e.offsetX * kX;
+	chart_1_cursor.innerHTML = `<line x1="${cursorX}" y1="0" x2="${cursorX}" y2="-6000" stroke="#000" stroke-width="3" stroke-dasharray="10"/>`;
 
 	ch1title.style.marginLeft = e.offsetX+"px";
+	const 
+		d0 = {date: "---", sick: 0, die: 0, cured: 0, tested: 0,},
+		d  = data[deyNum] || d0,
+		_d = data[deyNum - 1] || d0;
+	ch1_sick.textContent     = d.sick;
+	ch1_sicked.textContent   = d.sick - d.die - d.cured;
+	ch1_d_sick.textContent   = d.sick - _d.sick;
+	ch1_d_sicked.textContent = d.sick - d.die - d.cured - (_d.sick - _d.die - _d.cured);
 }
 
 svg_chart_2.onmousemove = function(e) {
-	var kY = 30 / 6;
-	var kX = 5;
+	var kX = 30 / 6;
+	var kY = 5;
 	var bcr = this.getBoundingClientRect();
 	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
-	ch2date.textContent    = calendar[Math.floor(e.offsetX / 30 * kY)];
+	ch2date.textContent    = calendar[Math.floor(e.offsetX / 30 * kX)];
 	// ch1vickDay.textContent = deys[(Math.floor(e.offsetX / 30) - 1) % 7];
-	ch2value.textContent   = Math.round((-e.offsetY + bcr.height) * kX - 500);
+	// ch2value.textContent   = Math.round((-e.offsetY + bcr.height) * kY - 500);
+	const deyNum = Math.floor(e.offsetX / 30 * kX);
+	const cursorX = e.offsetX;
+	chart_2_cursor.innerHTML = `<line x1="${cursorX}" y1="500" x2="${cursorX}" y2="-6000" stroke="#000" stroke-width="1" stroke-dasharray="2"/>`;
 
 	ch2title.style.marginLeft = e.offsetX+"px";
+
+	const 
+		d0 = {date: "---", sick: 0, die: 0, cured: 0, tested: 0,},
+		d  = data[deyNum] || d0,
+		_d = data[deyNum - 1] || d0;
+	// ch2_sick.textContent     = d.sick;
+	// ch2_sicked.textContent   = d.sick - d.die - d.cured;
+	ch2_d_sick.textContent   = d.sick - _d.sick;
+	ch2_d_sicked.textContent = d.sick - d.die - d.cured - (_d.sick - _d.die - _d.cured);
 }
