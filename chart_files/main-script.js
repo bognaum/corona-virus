@@ -136,13 +136,6 @@ function moveXCursor(deyNumFloat) {
 	ch1_sicked.  textContent = d.sick - d.die - d.cured;
 	ch1_d_sick.  textContent = d.sick - _d.sick;
 	ch1_d_sicked.textContent = d.sick - d.die - d.cured - (_d.sick - _d.die - _d.cured);
-		
-	ch2title.style.marginLeft = (pixInDey * deyNum)+"px";
-	ch2date.     textContent = calendar[deyNum];
-	// ch2_sick.    textContent = d.sick;
-	// ch2_sicked.  textContent = d.sick - d.die - d.cured;
-	ch2_d_sick.  textContent = d.sick - _d.sick;
-	ch2_d_sicked.textContent = d.sick - d.die - d.cured - (_d.sick - _d.die - _d.cured);
 
 	const 
 		cursor1X = deyNumFloat * 30,
