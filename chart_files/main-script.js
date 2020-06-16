@@ -32,10 +32,10 @@ data.forEach((v,i,a) => {
 	d_sickArr.push(d_sick);
 	d_sickedArr.push(d_sicked);
 
-	sickStr     += `${(i * 30) + 15} ${-v.sick   / 10}`;
-	sickedStr   += `${(i * 30) + 15} ${-sicked   / 10}`;
-	d_sickStr   += `${(i * 30) + 15} ${-d_sick   / 10}`;
-	d_sickedStr += `${(i * 30) + 15} ${-d_sicked / 10}`;
+	sickStr     += `${(i * 30) + 15} ${-v.sick   / 20}`;
+	sickedStr   += `${(i * 30) + 15} ${-sicked   / 20}`;
+	d_sickStr   += `${(i * 30) + 15} ${-d_sick   / 20}`;
+	d_sickedStr += `${(i * 30) + 15} ${-d_sicked / 20}`;
 
 	let dateStr = v.date.split(".").reverse().join("-");
 
