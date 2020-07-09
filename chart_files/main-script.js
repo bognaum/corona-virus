@@ -8,6 +8,11 @@ var
 	sickedStr   = "",
 	d_sickStr   = "",
 	d_sickedStr = "";
+
+let 
+	prev_kievSick = 0,
+	d_kievSickArr = [];
+
 let 
 	d_sickArr   = [],
 	d_sickedArr = [];
@@ -28,6 +33,12 @@ data.forEach((v,i,a) => {
 		tested   = v.tested || 0,
 		testedNoData = v.tested === undefined || v.tested === null,
 		d_tested = tested  - prevTested;
+
+	let 
+		kievSick = kievData[i]?.sick || 0,
+		d_kievSick = kievSick - prev_kievSick;
+	d_kievSickArr.push(d_kievSick);
+	prev_kievSick = kievSick;
 
 	d_sickArr.push(d_sick);
 	d_sickedArr.push(d_sicked);
@@ -51,6 +62,7 @@ data.forEach((v,i,a) => {
 			<td class="delta"  title="выздоровило за сутки"    >${d_Cured }</td>
 			<td class="delta"  title="прирост больных за сутки">${d_sicked}</td>
 			<td class="delta"  title="тестов за сутки"         >${testedNoData ? "-" : d_tested}</td>
+			<td class="delta"  title="прирост больных за сутки">${d_kievSick}</td>
 		</tr>
 		<tr>
 			<td class="common" title="всего"                   >Σ</td>
@@ -59,6 +71,7 @@ data.forEach((v,i,a) => {
 			<td class="common" title="выздоровило всего"       >${v.cured }</td>
 			<td class="common" title="больных всего"           >${sicked  }</td>
 			<td class="common" title="тестов всего"            >${testedNoData ? "-" : v.tested}</td>
+			<td class="common" title="в Киеве всего"           >${kievSick || "-"}</td>
 		<tr>
 	`;
 
