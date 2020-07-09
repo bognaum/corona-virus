@@ -126,7 +126,7 @@ chart_3.innerHTML =
 		/>
 		<polyline 
 			points="${d_kievSickArr.map((v,i,a) => `${3 + i * 6} ${-v }`).join(", ")}" 
-			stroke="#852" stroke-width="3" fill="none"
+			stroke="#285" stroke-width="3" fill="none"
 			stroke-linejoin="round"
 		/>
 	`;
