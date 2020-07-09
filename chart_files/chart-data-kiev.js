@@ -30,7 +30,7 @@ const kievData = [
 	{date: "2020.04.12", sick: 416,  dSick: null},
 	{date: "2020.04.13", sick: 495,  dSick: 79  },
 	{date: "2020.04.14", sick: 551,  dSick: 56  },
-	{date: "2020.04.15", sick: 612,  dSick: 15  },
+	{date: "2020.04.15", sick: 612,  dSick: 61  }, // 15
 	{date: "2020.04.16", sick: 644,  dSick: 32  },
 	{date: "2020.04.17", sick: 705,  dSick: 61  },
 	{date: "2020.04.18", sick: 770,  dSick: 65  },
@@ -58,7 +58,7 @@ const kievData = [
 	{date: "2020.05.10", sick: 1805, dSick: 34  },
 	{date: "2020.05.11", sick: 1871, dSick: 66  },
 	{date: "2020.05.12", sick: 1930, dSick: 59  },
-	{date: "2020.05.13", sick: 1960, dSick: 13  },
+	{date: "2020.05.13", sick: 1960, dSick: 30  }, // 13
 	{date: "2020.05.14", sick: 2012, dSick: 52  },
 	{date: "2020.05.15", sick: 2068, dSick: 56  },
 	{date: "2020.05.16", sick: 2221, dSick: 153 },
@@ -73,7 +73,7 @@ const kievData = [
 	{date: "2020.05.25", sick: 2652, dSick: 29  },
 	{date: "2020.05.26", sick: 2710, dSick: 58  },
 	{date: "2020.05.27", sick: 2739, dSick: 29  },
-	{date: "2020.05.28", sick: 2793, dSick: 28  },
+	{date: "2020.05.28", sick: 2793, dSick: 54  }, // 28
 	{date: "2020.05.29", sick: 2849, dSick: 56  },
 	{date: "2020.05.30", sick: 2904, dSick: 55  },
 	{date: "2020.05.31", sick: 2985, dSick: 81  },
