@@ -50,6 +50,8 @@ data.forEach((v,i,a) => {
 
 	let dateStr = v.date.split(".").reverse().join("-");
 
+	// debugger;
+
 	let code = `
 		<tr>
 			<td rowspan="2" data-week-d="${i % 7}" title="№"   >${i + 1   }</td>
@@ -115,6 +117,20 @@ chart_2.innerHTML =
 		/>
 	`;
 
+chart_3.innerHTML =
+	`
+		<polyline 
+			points="${kievData.map(v => v.sick).map((v,i,a) => `${3 + i * 6} ${-v / 5 / 10}`).join(", ")}" 
+			stroke="#bba" stroke-width="3" fill="none"
+			stroke-linejoin="round"
+		/>
+		<polyline 
+			points="${d_kievSickArr.map((v,i,a) => `${3 + i * 6} ${-v }`).join(", ")}" 
+			stroke="#852" stroke-width="3" fill="none"
+			stroke-linejoin="round"
+		/>
+	`;
+
 
 svg_chart_1.onmousemove = function(e) {
 	var kXY = 30 / 6;
@@ -127,6 +143,15 @@ svg_chart_1.onmousemove = function(e) {
 }
 
 svg_chart_2.onmousemove = function(e) {
+	var kX = 30 / 6;
+	var kY = 5;
+	var bcr = this.getBoundingClientRect();
+	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
+
+	moveXCursor(e.offsetX / 6);
+}
+
+svg_chart_3.onmousemove = function(e) {
 	var kX = 30 / 6;
 	var kY = 5;
 	var bcr = this.getBoundingClientRect();
@@ -151,9 +176,21 @@ function moveXCursor(deyNumFloat) {
 	ch1_d_sicked.textContent = d.sick - d.die - d.cured - (_d.sick - _d.die - _d.cured);
 
 	const 
+		kievSick = kievData[deyNum]?.sick || 0,
+		prev_kievSick = kievData[deyNum - 1]?.sick || 0,
+		d_kievSick = kievSick - prev_kievSick;
+
+	ch3title.style.marginLeft = (pixInDey * deyNum)+"px";
+	ch3date.     textContent = calendar[deyNum];
+	ch3_sick_kiev. textContent = kievSick;
+	ch3_d_sick_kiev. textContent = d_kievSick;
+
+	const 
 		cursor1X = deyNumFloat * 30,
-		cursor2X = deyNumFloat * 6;
+		cursor2X = deyNumFloat * 6,
+		cursor3X = deyNumFloat * 6;
 
 	chart_1_cursor.innerHTML = `<line x1="${cursor1X}" y1="0" x2="${cursor1X}" y2="-6000" stroke="#000" stroke-width="3" stroke-dasharray="10"/>`;
 	chart_2_cursor.innerHTML = `<line x1="${cursor2X}" y1="500" x2="${cursor2X}" y2="-6000" stroke="#000" stroke-width="1" stroke-dasharray="2"/>`;
+	chart_3_cursor.innerHTML = `<line x1="${cursor3X}" y1="500" x2="${cursor3X}" y2="-6000" stroke="#000" stroke-width="1" stroke-dasharray="2"/>`;
 }
