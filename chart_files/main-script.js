@@ -106,12 +106,12 @@ chart_1.innerHTML =
 chart_2.innerHTML =
 	`
 		<polyline 
-			points="${d_sickArr  .map((v,i,a) => `${3 + i * 6} ${-v / 5}`).join(", ")}" 
+			points="${d_sickArr  .map((v,i,a) => `${3 + i * 6} ${-v / 10}`).join(", ")}" 
 			stroke="#555" stroke-width="3" fill="none"
 			stroke-linejoin="round"
 		/>
 		<polyline 
-			points="${d_sickedArr.map((v,i,a) => `${3 + i * 6} ${-v / 5}`).join(", ")}" 
+			points="${d_sickedArr.map((v,i,a) => `${3 + i * 6} ${-v / 10}`).join(", ")}" 
 			stroke="#f77" stroke-width="3" fill="none"
 			stroke-linejoin="round"
 		/>
