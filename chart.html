@@ -31,6 +31,53 @@
 </head>
 <body>
 	<svg 
+		id="svg_chart_all" 
+		width="3000" 
+		height="600" 
+		viewBox="0 -3000 30000 6000" 
+		version="1.1" 
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<pattern id="grid" width="210" height="50" patternUnits="userSpaceOnUse">
+			<style>
+				#grid rect {
+					stroke: #999;
+					stroke-width: .5;
+					fill: #fff;
+				}
+				#grid rect.dey-off {
+					fill: #eee;
+				}
+			</style>
+			<rect x="0"   y="0" width="30" height="50" class="dey-off"/>
+			<rect x="30"  y="0" width="30" height="50"/>
+			<rect x="60"  y="0" width="30" height="50"/>
+			<rect x="90"  y="0" width="30" height="50"/>
+			<rect x="120" y="0" width="30" height="50"/>
+			<rect x="150" y="0" width="30" height="50"/>
+			<rect x="180" y="0" width="30" height="50" class="dey-off"/>
+		</pattern>
+		<pattern id="grid_all" width="210" height="500" patternUnits="userSpaceOnUse">
+			<rect width="210" height="500" fill="url(#grid)"/>
+			<line x1="0" y1="0" x2="5000" y2="0" stroke="#777" stroke-width="3"/>
+		</pattern>
+		<!-- <rect y="-4000" width="20000" height="4000" fill="url(#grid_1)"/> -->
+		<line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10" stroke-dasharray="300 120"/>
+		<g id="chart_all"></g>
+		<g id="chart_all_cursor"></g>
+	</svg>
+	<p>
+		<span id="ch1title" style="display: inline-block; white-space: nowrap;">
+			<span id="ch1date"></span> : <!-- <b><span id="ch1value"></span></span></b> -->
+			<b>
+				<span id="ch1_sick" style="color: #999;"></span>
+				<span id="ch1_sicked" style="color: #77f;"></span>
+				<span id="ch1_d_sick" style="color: #555;"></span>
+				<span id="ch1_d_sicked" style="color: #f77;"></span>
+			</b>
+		</span>
+	</p>
+	<svg 
 		id="svg_chart_1" 
 		width="3000" 
 		height="600" 
@@ -65,9 +112,9 @@
 		<g id="chart_1"></g>
 		<g id="chart_1_cursor"></g>
 	</svg>
-	<p>
+	<!-- <p>
 		<span id="ch1title" style="display: inline-block; white-space: nowrap;">
-			<span id="ch1date"></span> : <!-- <b><span id="ch1value"></span></span></b> -->
+			<span id="ch1date"></span> : 
 			<b>
 				<span id="ch1_sick" style="color: #999;"></span>
 				<span id="ch1_sicked" style="color: #77f;"></span>
@@ -75,7 +122,7 @@
 				<span id="ch1_d_sicked" style="color: #f77;"></span>
 			</b>
 		</span>
-	</p>
+	</p> -->
 	<svg 
 		id="svg_chart_2" 
 		width="1000" 
