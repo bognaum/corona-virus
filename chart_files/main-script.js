@@ -103,7 +103,8 @@ const
 
 		return sicked - prev_sicked;
 	}),
-	dSeck_dSecked_Code = getPolylinePointsArr([dSeckData, dSeckedData], allOpts);
+	kievDSeckData = kievData.map((v,i,a) => v.sick - (a[i - 1]?.sick || 0)),
+	dSeck_dSecked_Code = getPolylinePointsArr([dSeckData, dSeckedData, kievDSeckData], allOpts);
 
 chart_all.innerHTML = 
 	`
@@ -113,6 +114,9 @@ chart_all.innerHTML =
 		<polyline 
 			points="${getPolylinePoints(data.map((v) => v.sick - v.die - v.cured), allOpts)}" 
 				stroke="#77f" stroke-width="30" fill="none" stroke-linejoin="round"/>
+		<polyline 
+			points="${dSeck_dSecked_Code[2]}" 
+				stroke="#285" stroke-width="30" fill="none" stroke-linejoin="round"/>
 		<polyline 
 			points="${dSeck_dSecked_Code[0]}" 
 				stroke="#555" stroke-width="30" fill="none" stroke-linejoin="round"/>
