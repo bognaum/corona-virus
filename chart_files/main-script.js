@@ -93,6 +93,18 @@ const allOpts = {
 	maxY: 3000,
 };
 
+const
+	dSeckData = data.map((v,i,a) => v.sick - (a[i - 1]?.sick || 0)),
+	dSeckedData = data.map((v,i,a) => {
+		const 
+			sicked = v.sick - v.die - v.cured,
+			prev = a[i - 1] || {sick: 0, die: 0, cured: 0},
+			prev_sicked = prev.sick - prev.die - prev.cured;
+
+		return sicked - prev_sicked;
+	}),
+	dSeck_dSecked_Code = getPolylinePointsArr([dSeckData, dSeckedData], allOpts);
+
 chart_all.innerHTML = 
 	`
 		<polyline 
@@ -102,17 +114,10 @@ chart_all.innerHTML =
 			points="${getPolylinePoints(data.map((v) => v.sick - v.die - v.cured), allOpts)}" 
 				stroke="#77f" stroke-width="30" fill="none" stroke-linejoin="round"/>
 		<polyline 
-			points="${getPolylinePoints(data.map((v,i,a) => v.sick - (a[i - 1]?.sick || 0)), allOpts)}" 
+			points="${dSeck_dSecked_Code[0]}" 
 				stroke="#555" stroke-width="30" fill="none" stroke-linejoin="round"/>
 		<polyline 
-			points="${getPolylinePoints(data.map((v,i,a) => {
-				const 
-					sicked = v.sick - v.die - v.cured,
-					prev = a[i - 1] || {sick: 0, die: 0, cured: 0},
-					prev_sicked = prev.sick - prev.die - prev.cured;
-
-				return sicked - prev_sicked;
-			}), allOpts)}" 
+			points="${dSeck_dSecked_Code[1]}" 
 				stroke="#f77" stroke-width="30" fill="none" stroke-linejoin="round"/>
 	`;
 
@@ -258,4 +263,33 @@ function getPolylinePoints(data, options={}) {
 		str += `${(i * _.step) + _.offsetX} ${(-v * kY) + _.offsetY}`;
 	}
 	return str;
+}
+
+function getPolylinePointsArr(dataArr, options={}) {
+	const _ = Object.assign({
+		step: 10,
+		maxY: 100,
+		minY: 100,
+		offsetX: 0,
+		offsetY: 0,
+	}, options);
+	const 
+		flatDataArr = dataArr.flat(),
+		min = Math.min(...flatDataArr),
+		max = Math.max(...flatDataArr),
+		maxPosetive = (0 < max)? max : 0,
+		maxNegative = (min < 0)? min : 0,
+		kY = Math.min(Math.abs(_.maxY / maxPosetive), Math.abs(_.minY / maxNegative));
+	let res = [];
+
+	for (let data of dataArr) {
+		let str = "";
+		for (let [i,v] of data.entries()) {
+			if (i)
+				str += ", ";
+			str += `${(i * _.step) + _.offsetX} ${(-v * kY) + _.offsetY}`;
+		}
+		res.push(str);
+	}
+	return res;
 }
