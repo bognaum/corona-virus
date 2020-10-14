@@ -143,34 +143,6 @@ chart_1.innerHTML =
 				stroke="#f77" stroke-width="10" fill="none" stroke-linejoin="round"/>
 	`;
 
-chart_2.innerHTML =
-	`
-		<polyline 
-			points="${d_sickArr  .map((v,i,a) => `${3 + i * 6} ${-v / 10}`).join(", ")}" 
-			stroke="#555" stroke-width="3" fill="none"
-			stroke-linejoin="round"
-		/>
-		<polyline 
-			points="${d_sickedArr.map((v,i,a) => `${3 + i * 6} ${-v / 10}`).join(", ")}" 
-			stroke="#f77" stroke-width="3" fill="none"
-			stroke-linejoin="round"
-		/>
-	`;
-
-chart_3.innerHTML =
-	`
-		<polyline 
-			points="${kievData.map(v => v.sick).map((v,i,a) => `${3 + i * 6} ${-v / 5 / 10}`).join(", ")}" 
-			stroke="#bba" stroke-width="3" fill="none"
-			stroke-linejoin="round"
-		/>
-		<polyline 
-			points="${d_kievSickArr.map((v,i,a) => `${3 + i * 6} ${-v }`).join(", ")}" 
-			stroke="#285" stroke-width="3" fill="none"
-			stroke-linejoin="round"
-		/>
-	`;
-
 
 svg_chart_all.onmousemove = function(e) {
 	var kXY = 30 / 6;
@@ -186,24 +158,6 @@ svg_chart_1.onmousemove = function(e) {
 	var kXY = 30 / 6;
 	var kY = 30 / 6 * 2;
 	var kX = 30 / 6;
-	var bcr = this.getBoundingClientRect();
-	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
-
-	moveXCursor(e.offsetX / 6);
-}
-
-svg_chart_2.onmousemove = function(e) {
-	var kX = 30 / 6;
-	var kY = 5;
-	var bcr = this.getBoundingClientRect();
-	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
-
-	moveXCursor(e.offsetX / 6);
-}
-
-svg_chart_3.onmousemove = function(e) {
-	var kX = 30 / 6;
-	var kY = 5;
 	var bcr = this.getBoundingClientRect();
 	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
 
