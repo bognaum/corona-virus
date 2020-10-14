@@ -94,6 +94,12 @@ const allOpts = {
 	offsetX: 30,
 };
 
+const kievSick_sick_sicked_data = getPolylinePointsArr([
+		kievData.map((v,i,a) => v.sick),
+		data.map(v => v.sick),
+		data.map((v) => v.sick - v.die - v.cured)
+	], allOpts);
+
 const
 	dSeckData = data.map((v,i,a) => v.sick - (a[i - 1]?.sick || 0)),
 	dSeckedData = data.map((v,i,a) => {
@@ -106,12 +112,6 @@ const
 	}),
 	kievDSeckData = kievData.map((v,i,a) => v.sick - (a[i - 1]?.sick || 0)),
 	dSeck_dSecked_Code = getPolylinePointsArr([dSeckData, dSeckedData, kievDSeckData], allOpts);
-
-const kievSick_sick_sicked_data = getPolylinePointsArr([
-		kievData.map((v,i,a) => v.sick),
-		data.map(v => v.sick),
-		data.map((v) => v.sick - v.die - v.cured)
-	], allOpts);
 
 chart_1.innerHTML = 
 	`
