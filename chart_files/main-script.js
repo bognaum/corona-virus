@@ -91,6 +91,7 @@ const allOpts = {
 	step: 60,
 	minY: -3000,
 	maxY: 3000,
+	offsetX: 30,
 };
 
 const

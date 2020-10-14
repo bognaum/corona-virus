@@ -38,30 +38,26 @@
 		version="1.1" 
 		xmlns="http://www.w3.org/2000/svg"
 	>
-		<pattern id="grid" width="210" height="50" patternUnits="userSpaceOnUse">
+		<pattern id="grid_all" width="420" height="6000" patternUnits="userSpaceOnUse">
 			<style>
-				#grid rect {
+				#grid_all rect {
 					stroke: #999;
-					stroke-width: .5;
+					stroke-width: 1;
 					fill: #fff;
 				}
-				#grid rect.dey-off {
+				#grid_all rect.dey-off {
 					fill: #eee;
 				}
 			</style>
-			<rect x="0"   y="0" width="30" height="50" class="dey-off"/>
-			<rect x="30"  y="0" width="30" height="50"/>
-			<rect x="60"  y="0" width="30" height="50"/>
-			<rect x="90"  y="0" width="30" height="50"/>
-			<rect x="120" y="0" width="30" height="50"/>
-			<rect x="150" y="0" width="30" height="50"/>
-			<rect x="180" y="0" width="30" height="50" class="dey-off"/>
+			<rect x="0"   y="0" width="60" height="6000" class="dey-off"/>
+			<rect x="60"  y="0" width="60" height="6000"/>
+			<rect x="120" y="0" width="60" height="6000"/>
+			<rect x="180" y="0" width="60" height="6000"/>
+			<rect x="240" y="0" width="60" height="6000"/>
+			<rect x="300" y="0" width="60" height="6000"/>
+			<rect x="360" y="0" width="60" height="6000" class="dey-off"/>
 		</pattern>
-		<pattern id="grid_all" width="210" height="500" patternUnits="userSpaceOnUse">
-			<rect width="210" height="500" fill="url(#grid)"/>
-			<line x1="0" y1="0" x2="5000" y2="0" stroke="#777" stroke-width="3"/>
-		</pattern>
-		<!-- <rect y="-4000" width="20000" height="4000" fill="url(#grid_1)"/> -->
+		<rect y="-3000" width="30000" height="6000" fill="url(#grid_all)"/>
 		<line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10" stroke-dasharray="300 120"/>
 		<g id="chart_all"></g>
 		<g id="chart_all_cursor"></g>
