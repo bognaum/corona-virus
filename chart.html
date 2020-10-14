@@ -30,14 +30,7 @@
 	<title>Corona-virus</title>
 </head>
 <body>
-	<svg 
-		id="svg_chart_all" 
-		width="3000" 
-		height="600" 
-		viewBox="0 -3000 30000 6000" 
-		version="1.1" 
-		xmlns="http://www.w3.org/2000/svg"
-	>
+	<svg height="0" width="0" style="position: absolute;">
 		<pattern id="grid_all" width="420" height="6000" patternUnits="userSpaceOnUse">
 			<style>
 				#grid_all rect {
@@ -57,10 +50,19 @@
 			<rect x="300" y="0" width="60" height="6000"/>
 			<rect x="360" y="0" width="60" height="6000" class="dey-off"/>
 		</pattern>
+	</svg>
+	<svg 
+		id="svg_chart_1" 
+		width="3000" 
+		height="300" 
+		viewBox="0 -3000 30000 3000" 
+		version="1.1" 
+		xmlns="http://www.w3.org/2000/svg"
+	>
 		<rect y="-3000" width="30000" height="6000" fill="url(#grid_all)"/>
-		<line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10" stroke-dasharray="300 120"/>
-		<g id="chart_all"></g>
-		<g id="chart_all_cursor"></g>
+		<!-- <line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10" stroke-dasharray="300 120"/> -->
+		<g id="chart_1"></g>
+		<g id="chart_1_cursor"></g>
 	</svg>
 	<p>
 		<span id="ch1title" style="display: inline-block; white-space: nowrap;">
@@ -68,8 +70,7 @@
 			<b>
 				<span id="ch1_sick" style="color: #999;"></span>
 				<span id="ch1_sicked" style="color: #77f;"></span>
-				<span id="ch1_d_sick" style="color: #555;"></span>
-				<span id="ch1_d_sicked" style="color: #f77;"></span>
+				<span id="ch3_sick_kiev" style="color: #bba;"></span>
 			</b>
 		</span>
 	</p>
@@ -77,11 +78,26 @@
 		<span id="ch3title" style="display: inline-block; white-space: nowrap;">
 			<span id="ch3date"></span> : <!-- <b><span id="ch1value"></span></span></b> -->
 			<b>
-				<span id="ch3_sick_kiev" style="color: #bba;"></span>
+				<span id="ch1_d_sick" style="color: #555;"></span>
+				<span id="ch1_d_sicked" style="color: #f77;"></span>
 				<span id="ch3_d_sick_kiev" style="color: #285;"></span>
 			</b>
 		</span>
 	</p>
+	<svg 
+		id="svg_chart_2" 
+		width="3000" 
+		height="600" 
+		viewBox="0 -3000 30000 6000" 
+		version="1.1" 
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<rect y="-3000" width="30000" height="6000" fill="url(#grid_all)"/>
+		<line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10"/>
+		<!-- <line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10" stroke-dasharray="300 120"/> -->
+		<g id="chart_2"></g>
+		<g id="chart_2_cursor"></g>
+	</svg>
 	<br>
 	<br>
 	<br>

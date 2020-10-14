@@ -112,26 +112,7 @@ const sick_sicked_data = getPolylinePointsArr([
 		data.map((v) => v.sick - v.die - v.cured)
 	], allOpts);
 
-/*chart_all.innerHTML = 
-	`
-		<polyline 
-			points="${getPolylinePoints(data.map(v => v.sick), allOpts)}" 
-				stroke="#999" stroke-width="30" fill="none" stroke-linejoin="round"/>
-		<polyline 
-			points="${getPolylinePoints(data.map((v) => v.sick - v.die - v.cured), allOpts)}" 
-				stroke="#77f" stroke-width="30" fill="none" stroke-linejoin="round"/>
-		<polyline 
-			points="${dSeck_dSecked_Code[2]}" 
-				stroke="#285" stroke-width="30" fill="none" stroke-linejoin="round"/>
-		<polyline 
-			points="${dSeck_dSecked_Code[0]}" 
-				stroke="#555" stroke-width="30" fill="none" stroke-linejoin="round"/>
-		<polyline 
-			points="${dSeck_dSecked_Code[1]}" 
-				stroke="#f77" stroke-width="30" fill="none" stroke-linejoin="round"/>
-	`;*/
-
-chart_all.innerHTML = 
+chart_1.innerHTML = 
 	`
 		<polyline 
 			points="${sick_sicked_data[0]}" 
@@ -139,6 +120,11 @@ chart_all.innerHTML =
 		<polyline 
 			points="${sick_sicked_data[1]}" 
 				stroke="#77f" stroke-width="30" fill="none" stroke-linejoin="round"/>
+		<polyline 
+	`;
+
+chart_2.innerHTML = 
+	`
 		<polyline 
 			points="${dSeck_dSecked_Code[2]}" 
 				stroke="#285" stroke-width="30" fill="none" stroke-linejoin="round"/>
@@ -151,7 +137,17 @@ chart_all.innerHTML =
 	`;
 
 
-svg_chart_all.onmousemove = function(e) {
+svg_chart_1.onmousemove = function(e) {
+	var kXY = 30 / 6;
+	var kY = 30 / 6 * 2;
+	var kX = 30 / 6;
+	var bcr = this.getBoundingClientRect();
+	var deys = ["понедельник", "второник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
+
+	moveXCursor(e.offsetX / 6);
+}
+
+svg_chart_2.onmousemove = function(e) {
 	var kXY = 30 / 6;
 	var kY = 30 / 6 * 2;
 	var kX = 30 / 6;
@@ -192,9 +188,8 @@ function moveXCursor(deyNumFloat) {
 		cursor2X = deyNumFloat * 6,
 		cursor3X = deyNumFloat * 6;
 
-	chart_all_cursor.innerHTML = `<line x1="${cursorAllX}" y1="3000" x2="${cursorAllX}" y2="-6000" stroke="#000" stroke-width="3" stroke-dasharray="100 30"/>`;
-	// chart_1_cursor.innerHTML = `<line x1="${cursor1X}" y1="0" x2="${cursor1X}" y2="-6000" stroke="#000" stroke-width="3" stroke-dasharray="10"/>`;
-	// chart_2_cursor.innerHTML = `<line x1="${cursor2X}" y1="500" x2="${cursor2X}" y2="-6000" stroke="#000" stroke-width="1" stroke-dasharray="2"/>`;
+	chart_1_cursor.innerHTML = `<line x1="${cursorAllX}" y1="3000" x2="${cursorAllX}" y2="-6000" stroke="#000" stroke-width="3" stroke-dasharray="100 30"/>`;
+	chart_2_cursor.innerHTML = `<line x1="${cursorAllX}" y1="3000" x2="${cursorAllX}" y2="-6000" stroke="#000" stroke-width="3" stroke-dasharray="100 30"/>`;
 }
 
 function getPolylinePoints(data, options={}) {
