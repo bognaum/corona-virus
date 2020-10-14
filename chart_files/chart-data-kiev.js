@@ -211,4 +211,6 @@ const kievData = [
 	{date: "2020.10.10", sick: 26995, dSick: null},
 	{date: "2020.10.11", sick: 27497, dSick: null},
 	{date: "2020.10.12", sick: 27693, dSick: null},
+	{date: "2020.10.13", sick: 28090, dSick: null},
+	{date: "2020.10.14", sick: 28512, dSick: null},
 ]
