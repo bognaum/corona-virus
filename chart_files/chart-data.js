@@ -213,5 +213,11 @@ var data = [
 	{date: "2020.10.12", sick: 265454, die: 5015, cured: 114410, tested: 2602635},
 	{date: "2020.10.13", sick: 270587, die: 5122, cured: 116562, tested: 2630988},
 	{date: "2020.10.14", sick: 276177, die: 5229, cured: 118699, tested: 2665154},
+	{date: "2020.10.15", sick: 281239, die: 5302, cured: 119650, tested: 2695488},
+	{date: "2020.10.16", sick: 287231, die: 5408, cured: 121919, tested: 2729496},
+	{date: "2020.10.17", sick: 293641, die: 5517, cured: 124113, tested: 2765787},
+	{date: "2020.10.18", sick: 298872, die: 5607, cured: 125377, tested: 2793290},
+	{date: "2020.10.19", sick: 303638, die: 5673, cured: 126489, tested: 2815833},
+	{date: "2020.10.20", sick: 309107, die: 5786, cured: 129533, tested: 2847376},
 
 ];
