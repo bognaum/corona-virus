@@ -260,4 +260,12 @@ const kievData = [
 	{date: "2020.11.28", sick: 67278, dSick: null},
 	{date: "2020.11.29", sick: 69018, dSick: null},
 	{date: "2020.11.30", sick: 70478, dSick: null},
+	{date: "2020.12.01", sick: 72277, dSick: null},
+	{date: "2020.12.02", sick: 74012, dSick: null},
+	{date: "2020.12.03", sick: 75376, dSick: null},
+	{date: "2020.12.04", sick: 76750, dSick: null},
+	{date: "2020.12.05", sick: 78291, dSick: null},
+	{date: "2020.12.06", sick: 79809, dSick: null},
+	{date: "2020.12.07", sick: 81335, dSick: null},
+	{date: "2020.12.08", sick: 82810, dSick: null},
 ]
