@@ -78,7 +78,7 @@ data.forEach(async (v,i,a) => {
 		<tr>
 	`;
 
-	tBody.innerHTML += code;
+	tBody.append(evalDF(code));
 
 	prevSick = v.sick;
 	prevSicked = sicked;
@@ -247,4 +247,10 @@ function getPolylinePointsArr(dataArr, options={}) {
 		res.push(str);
 	}
 	return res;
+}
+
+function evalDF(code) {
+	const shell = document.createElement("template");
+	shell.innerHTML = code;
+	return shell.content;
 }
