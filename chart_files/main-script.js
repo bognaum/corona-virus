@@ -17,8 +17,7 @@ let
 	d_sickArr   = [],
 	d_sickedArr = [];
 
-data.forEach(async (v,i,a) => {
-	await new Promise((rs) => setTimeout(rs));
+data.forEach((v,i,a) => {
 	if (i) {
 		sickStr     += ", ";
 		sickedStr   += ", ";
