@@ -113,6 +113,11 @@ const
 	kievDSeckData = kievData.map((v,i,a) => v.sick - (a[i - 1]?.sick || 0)),
 	dSeck_dSecked_Code = getPolylinePointsArr([dSeckData, dSeckedData, kievDSeckData], allOpts);
 
+const dTested = getPolylinePoints(
+	data.map((v,i,a) => (v.tested || 0) - (a[i - 1]?.tested || 0)),
+	allOpts
+);
+
 chart_1.innerHTML = 
 	`
 		<polyline 
@@ -128,6 +133,9 @@ chart_1.innerHTML =
 
 chart_2.innerHTML = 
 	`
+		<polyline 
+			points="${dTested}" 
+				stroke="#7bf" stroke-width="30" fill="none" stroke-linejoin="round"/>
 		<polyline 
 			points="${dSeck_dSecked_Code[2]}" 
 				stroke="#285" stroke-width="30" fill="none" stroke-linejoin="round"/>
@@ -178,12 +186,14 @@ function moveXCursor(deyNumFloat) {
 	const 
 		kievSick = kievData[deyNum]?.sick || 0,
 		prev_kievSick = kievData[deyNum - 1]?.sick || 0,
-		d_kievSick = kievSick - prev_kievSick;
+		d_kievSick = kievSick - prev_kievSick,
+		d_tested = (d.tested || 0) - (_d.tested || 0);
 
 	ch3title.style.marginLeft = (pixInDey * deyNum)+"px";
 	ch3date.     textContent = calendar[deyNum];
 	ch3_sick_kiev. textContent = kievSick;
 	ch3_d_sick_kiev. textContent = d_kievSick;
+	ch3_d_tested.   textContent = d_tested;
 
 	const 
 		cursorAllX = deyNumFloat * 60,
