@@ -124,7 +124,6 @@ chart_1.innerHTML =
 		<polyline 
 			points="${kievSick_sick_sicked_data[2]}" 
 				stroke="#77f" stroke-width="30" fill="none" stroke-linejoin="round"/>
-		<polyline 
 	`;
 
 chart_2.innerHTML = 
