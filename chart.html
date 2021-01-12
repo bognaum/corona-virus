@@ -51,19 +51,22 @@
 			<rect x="360" y="0" width="60" height="6000" class="dey-off"/>
 		</pattern>
 	</svg>
-	<svg 
-		id="svg_chart_1" 
-		width="3000" 
-		height="300" 
-		viewBox="0 -3000 30000 3000" 
-		version="1.1" 
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<rect y="-3000" width="30000" height="6000" fill="url(#grid_all)"/>
-		<!-- <line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10" stroke-dasharray="300 120"/> -->
-		<g id="chart_1"></g>
-		<g id="chart_1_cursor"></g>
-	</svg>
+	<div class="svg-wr" style="position: relative; display: inline-block;">
+		<svg 
+			id="svg_chart_1" 
+			width="3000" 
+			height="300" 
+			viewBox="0 -3000 30000 3000" 
+			version="1.1" 
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<rect y="-3000" width="30000" height="6000" fill="url(#grid_all)"/>
+			<!-- <line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10" stroke-dasharray="300 120"/> -->
+			<g id="chart_1"></g>
+			<g id="chart_1_cursor"></g>
+		</svg>
+		<div id="svg_chart_1_cover" class="svg-cover" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;"></div>
+	</div>
 	<p>
 		<span id="ch1title" style="display: inline-block; white-space: nowrap;">
 			<span id="ch1date"></span> : <!-- <b><span id="ch1value"></span></span></b> -->
@@ -84,20 +87,23 @@
 			</b>
 		</span>
 	</p>
-	<svg 
-		id="svg_chart_2" 
-		width="3000" 
-		height="600" 
-		viewBox="0 -3000 30000 6000" 
-		version="1.1" 
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<rect y="-3000" width="30000" height="6000" fill="url(#grid_all)"/>
-		<line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10"/>
-		<!-- <line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10" stroke-dasharray="300 120"/> -->
-		<g id="chart_2"></g>
-		<g id="chart_2_cursor"></g>
-	</svg>
+	<div class="svg-wr" style="position: relative; display: inline-block;">
+		<svg 
+			id="svg_chart_2" 
+			width="3000" 
+			height="600" 
+			viewBox="0 -3000 30000 6000" 
+			version="1.1" 
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<rect y="-3000" width="30000" height="6000" fill="url(#grid_all)"/>
+			<line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10"/>
+			<!-- <line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10" stroke-dasharray="300 120"/> -->
+			<g id="chart_2"></g>
+			<g id="chart_2_cursor"></g>
+		</svg>
+		<div id="svg_chart_2_cover" class="svg-cover" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;"></div>
+	</div>
 	<br>
 	<br>
 	<br>

@@ -141,7 +141,7 @@ chart_2.innerHTML =
 	`;
 
 
-svg_chart_1.onmousemove = function(e) {
+svg_chart_1_cover.onmousemove = function(e) {
 	var kXY = 30 / 6;
 	var kY = 30 / 6 * 2;
 	var kX = 30 / 6;
@@ -151,7 +151,7 @@ svg_chart_1.onmousemove = function(e) {
 	moveXCursor(e.offsetX / 6);
 }
 
-svg_chart_2.onmousemove = function(e) {
+svg_chart_2_cover.onmousemove = function(e) {
 	var kXY = 30 / 6;
 	var kY = 30 / 6 * 2;
 	var kX = 30 / 6;
