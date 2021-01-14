@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Corona-virus</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const
+			l = location,
+			arr = l.pathname.split("/"),
+			name = arr.pop(),
+			newPathname = arr.join("/") + "/chart.html",
+			newURL = l.origin + newPathname + l.search + l.hash;
+		// location.pathname = arr.join("/") + "/chart.html";
+		location.replace(newURL);
+	</script>
+</body>
+</html>
