@@ -307,5 +307,6 @@ var data = [
 	{date: "2021.01.14", sick: 1138764, cured: 837063, die: 20376, tested: 5874851},
 	{date: "2021.01.15", sick: 1146963, cured: 847391, die: 20542, tested: 5905076},
 	{date: "2021.01.16", sick: 1154692, cured: 857183, die: 20686, tested: 5934439},
+	{date: "2021.01.17", sick: 1160682, cured: 865960, die: 20802, tested: 5953987},
 
 ];
