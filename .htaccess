@@ -1,0 +1,15 @@
+AddDefaultCharset UTF-8
+
+# Header set Cache-Control "no-store"
+
+# ExpiresActive on
+# ExpiresDefault "now"
+
+<IFModule mod_headers.c>
+	Header set Cache-Control "no-store"
+</IFModule>
+
+# <IFModule mod_headers.c>
+# 	ExpiresActive on
+# 	ExpiresDefault "now"
+# </IFModule>
