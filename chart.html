@@ -191,8 +191,17 @@
 	<br>
 	<br>
 	<br>
-	<script type="text/javascript" src="./chart_files/chart-data.js"></script>
-	<script type="text/javascript" src="./chart_files/chart-data-kiev.js"></script>
+	
+	<script type="text/javascript">
+		document.write(`
+
+			\u003Cscript type="text/javascript" 
+				src="./chart_files/chart-data.js?ts=${Date.now()}">\u003C/script>
+			\u003Cscript type="text/javascript" 
+				src="./chart_files/chart-data-kiev.js?ts=${Date.now()}">\u003C/script>
+
+		`);
+	</script>
 	<script type="text/javascript" src="./chart_files/calendar.js"></script>
 	<script type="text/javascript" src="chart_files/main-script.js"></script>
 </body>
