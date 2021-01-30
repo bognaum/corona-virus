@@ -33,7 +33,6 @@
 	<title>Corona-virus</title>
 </head>
 <body>
-	<div style="text-align: right; margin: 10px; padding: 10px;"><button id="updateBtn">Обновить</button></div>
 	<svg height="0" width="0" style="position: absolute;">
 		<pattern id="grid_all" width="420" height="6000" patternUnits="userSpaceOnUse">
 			<style>
@@ -205,10 +204,5 @@
 	</script>
 	<script type="text/javascript" src="./chart_files/calendar.js"></script>
 	<script type="text/javascript" src="chart_files/main-script.js"></script>
-	<script type="text/javascript">
-		updateBtn.onclick = (e) => {
-			location.search = `ts=${Date.now()}`;
-		}
-	</script>
 </body>
 </html> 
