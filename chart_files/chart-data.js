@@ -346,11 +346,11 @@ var data = [
 	{date: "2021.02.22", sick: 1307662, cured: 1147426, die: 25156, tested: 6714484},
 	{date: "2021.02.23", sick: 1311844, cured: 1151777, die: 25309, tested: 6738144},
 	{date: "2021.02.24", sick: 1317694, cured: 1155422, die: 25461, tested: 6772495},
-	{date: "2021.02.25", sick: 1325841, cured: 1159311, die: 25596, tested: 6809165, vaccinated: 159 },
-	{date: "2021.02.26", sick: 1333844, cured: 1163555, die: 25742, tested: 6845974, vaccinated: 1338},
-	{date: "2021.02.27", sick: 1342016, cured: 1168321, die: 25893, tested: 6881688, vaccinated: 3051},
-	{date: "2021.02.28", sick: 1347849, cured: 1170023, die: 25982, tested: 6906179, vaccinated: 3141},
-	{date: "2021.03.01", sick: 1352134, cured: 1171724, die: 26050, tested: 6921573, vaccinated: 3141},
-	{date: "2021.03.02", sick: 1357470, cured: 1176918, die: 26212, tested: 6948980, vaccinated: 4905},
+	{date: "2021.02.25", sick: 1325841, cured: 1159311, die: 25596, tested: 6809165},
+	{date: "2021.02.26", sick: 1333844, cured: 1163555, die: 25742, tested: 6845974},
+	{date: "2021.02.27", sick: 1342016, cured: 1168321, die: 25893, tested: 6881688},
+	{date: "2021.02.28", sick: 1347849, cured: 1170023, die: 25982, tested: 6906179},
+	{date: "2021.03.01", sick: 1352134, cured: 1171724, die: 26050, tested: 6921573},
+	{date: "2021.03.02", sick: 1357470, cured: 1176918, die: 26212, tested: 6948980},
 
 ];
