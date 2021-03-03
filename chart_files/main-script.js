@@ -40,6 +40,12 @@ data.forEach((v,i,a) => {
 	d_kievSickArr.push(d_kievSick);
 	prev_kievSick = kievSick;
 
+	let 
+		ukrPopulation = 41980000,
+		dose1         = vacData[i].dose1 || 0,
+		dose1Per      = Math.round(dose1 / ukrPopulation * 100 * 100) / 100,
+		deltaDose1    = vacData[i].dose1 - (vacData[i - 1]?.dose1 || 0);
+
 	d_sickArr.push(d_sick);
 	d_sickedArr.push(d_sicked);
 
@@ -65,6 +71,7 @@ data.forEach((v,i,a) => {
 			<td class="delta"  title="прирост больных за сутки">${d_sicked}</td>
 			<td class="delta"  title="тестов за сутки"         >${testedNoData ? "-" : d_tested}</td>
 			<td class="delta"  title="прирост больных за сутки">${d_kievSick}</td>
+			<td class="delta"  title="вакцинировано за сутки"  >${deltaDose1 || "0"}</td>
 		</tr>
 		<tr>
 			<td class="common" title="всего"                   >Σ</td>
@@ -74,6 +81,7 @@ data.forEach((v,i,a) => {
 			<td class="common" title="больных всего"           >${sicked  }</td>
 			<td class="common" title="тестов всего"            >${testedNoData ? "-" : v.tested}</td>
 			<td class="common" title="в Киеве всего"           >${kievSick || "-"}</td>
+			<td class="common" title="вакцинировано всего %"  >${dose1Per || "0"}%</td>
 		<tr>
 	`;
 
