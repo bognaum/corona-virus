@@ -365,5 +365,6 @@ var vacData = [
 	{date: "2021.03.13", vaccinated: 47541 , dose1: 47541 },
 	{date: "2021.03.14", vaccinated: 51137 , dose1: 51137 },
 	{date: "2021.03.15", vaccinated: 53155 , dose1: 53155 },
+	{date: "2021.03.16", vaccinated: 62083 , dose1: 62083 },
 
 ];
