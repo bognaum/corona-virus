@@ -42,9 +42,9 @@ data.forEach((v,i,a) => {
 
 	let 
 		ukrPopulation = 41980000,
-		dose1         = vacData[i].dose1 || 0,
+		dose1         = vacData[i]?.dose1 || 0,
 		dose1Per      = Math.round(dose1 / ukrPopulation * 100 * 100) / 100,
-		deltaDose1    = vacData[i].dose1 - (vacData[i - 1]?.dose1 || 0);
+		deltaDose1    = vacData[i]?.dose1 - (vacData[i - 1]?.dose1 || 0);
 
 	d_sickArr.push(d_sick);
 	d_sickedArr.push(d_sicked);
