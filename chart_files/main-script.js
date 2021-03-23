@@ -209,8 +209,8 @@ function moveXCursor(deyNumFloat) {
 		cursor2X = deyNumFloat * 6,
 		cursor3X = deyNumFloat * 6;
 
-	chart_1_cursor.innerHTML = `<line x1="${cursorAllX}" y1="3000" x2="${cursorAllX}" y2="-6000" stroke="#000" stroke-width="3" stroke-dasharray="100 30"/>`;
-	chart_2_cursor.innerHTML = `<line x1="${cursorAllX}" y1="3000" x2="${cursorAllX}" y2="-6000" stroke="#000" stroke-width="3" stroke-dasharray="100 30"/>`;
+	chart_1_cursor.innerHTML = `<line x1="${cursorAllX}" y1="3000" x2="${cursorAllX}" y2="-6000" stroke="#fff" stroke-width="10" stroke-dasharray="100 30"/>`;
+	chart_2_cursor.innerHTML = `<line x1="${cursorAllX}" y1="3000" x2="${cursorAllX}" y2="-6000" stroke="#fff" stroke-width="10" stroke-dasharray="100 30"/>`;
 }
 
 function getPolylinePoints(data, options={}) {
