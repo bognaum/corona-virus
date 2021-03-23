@@ -149,7 +149,7 @@ chart_2.innerHTML =
 				stroke="#285" stroke-width="30" fill="none" stroke-linejoin="round"/>
 		<polyline 
 			points="${dSeck_dSecked_Code[0]}" 
-				stroke="#555" stroke-width="30" fill="none" stroke-linejoin="round"/>
+				stroke="#eee" stroke-width="30" fill="none" stroke-linejoin="round"/>
 		<polyline 
 			points="${dSeck_dSecked_Code[1]}" 
 				stroke="#f77" stroke-width="30" fill="none" stroke-linejoin="round"/>

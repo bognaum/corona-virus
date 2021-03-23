@@ -4,6 +4,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<style type="text/css">
+		body {
+			background-color: #222;
+			color: #aaa;
+		}
 		.chart-line-colcor-sample {
 			height: 5px;
 			margin: 10px;
@@ -11,7 +15,7 @@
 		}
 		#tBody .delta {
 			/*font-style: italic;*/
-			background-color: #eee;
+			background-color: #555;
 		}
 		#tBody .common {
 			color: #aaa;
@@ -19,7 +23,7 @@
 		}
 		#tBody td[data-week-d] {
 			font-weight: bold;
-			color: #555;
+			color: #aaa;
 		}
 		#tBody td[data-week-d="6"],
 		#tBody td[data-week-d="0"] {
@@ -37,12 +41,12 @@
 		<pattern id="grid_all" width="420" height="6000" patternUnits="userSpaceOnUse">
 			<style>
 				#grid_all rect {
-					stroke: #999;
+					stroke: #fff;
 					stroke-width: 1;
-					fill: #fff;
+					fill: #222;
 				}
 				#grid_all rect.dey-off {
-					fill: #eee;
+					fill: #555;
 				}
 			</style>
 			<rect x="0"   y="0" width="60" height="6000" class="dey-off"/>
@@ -85,7 +89,7 @@
 			<span id="ch3title" style="display: inline-block; white-space: nowrap;">
 				<span id="ch3date"></span> : <!-- <b><span id="ch1value"></span></span></b> -->
 				<b>
-					<span id="ch1_d_sick" style="color: #555;"></span>
+					<span id="ch1_d_sick" style="color: #eee;"></span>
 					<span id="ch1_d_sicked" style="color: #f77;"></span>
 					<span id="ch3_d_sick_kiev" style="color: #285;"></span>
 					<span id="ch3_d_tested" style="color: #7bf;"></span>
@@ -102,7 +106,7 @@
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<rect y="-3000" width="30000" height="6000" fill="url(#grid_all)"/>
-				<line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10"/>
+				<line x1="0" y1="0" x2="30000" y2="0" stroke="#ccc" stroke-width="10"/>
 				<!-- <line x1="0" y1="0" x2="30000" y2="0" stroke="#000" stroke-width="10" stroke-dasharray="300 120"/> -->
 				<g id="chart_2"></g>
 				<g id="chart_2_cursor"></g>
@@ -123,7 +127,7 @@
 				<!-- <th rowspan="2">№</th> -->
 				<th rowspan="2" colspan="3">дата</th>
 				<th>
-					<div class="chart-line-colcor-sample" style="background-color: #555;"></div>
+					<div class="chart-line-colcor-sample" style="background-color: #eee;"></div>
 					случаев<br>заражения<br>за<br>сутки
 				</th>
 				<!-- <th rowspan="2">
