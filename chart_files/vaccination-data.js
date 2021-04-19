@@ -393,5 +393,12 @@ var vacData = [
 	{date: "2021.04.10", vaccinated: 291824  , dose1: 291822  , dose2: 2      },
 	{date: "2021.04.11", vaccinated: 291824  , dose1: 291822  , dose2: 2      },
 	{date: "2021.04.12", vaccinated: 378269  , dose1: 378264  , dose2: 5      },
+	{date: "2021.04.13", vaccinated: 378269  , dose1: 378264  , dose2: 5      },
+	{date: "2021.04.14", vaccinated: 378269  , dose1: 378264  , dose2: 5      },
+	{date: "2021.04.15", vaccinated: 378269  , dose1: 378264  , dose2: 5      },
+	{date: "2021.04.16", vaccinated: 378269  , dose1: 378264  , dose2: 5      },
+	{date: "2021.04.17", vaccinated: 378269  , dose1: 378264  , dose2: 5      },
+	{date: "2021.04.18", vaccinated: 378269  , dose1: 378264  , dose2: 5      },
+	{date: "2021.04.19", vaccinated: 450650  , dose1: 450645  , dose2: 5      },
 
 ];
