@@ -141,9 +141,11 @@ chart_1.innerHTML =
 
 chart_2.innerHTML = 
 	`
+		<!-- 
 		<polyline 
 			points="${dTested}" 
 				stroke="#7bf" stroke-width="30" fill="none" stroke-linejoin="round"/>
+		 -->
 		<polyline 
 			points="${dSeck_dSecked_Code[2]}" 
 				stroke="#285" stroke-width="30" fill="none" stroke-linejoin="round"/>
@@ -201,7 +203,7 @@ function moveXCursor(deyNumFloat) {
 	ch3date.     textContent = calendar[deyNum];
 	ch3_sick_kiev. textContent = kievSick;
 	ch3_d_sick_kiev. textContent = d_kievSick;
-	ch3_d_tested.   textContent = d_tested;
+	// ch3_d_tested.   textContent = d_tested;
 
 	const 
 		cursorAllX = deyNumFloat * 60,
