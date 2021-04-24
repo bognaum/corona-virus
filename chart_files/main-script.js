@@ -134,8 +134,14 @@ chart_1.innerHTML =
 		<polyline 
 			points="${kievSick_sick_sicked_data[1]}" 
 				stroke="#999" stroke-width="30" fill="none" stroke-linejoin="round"/>
+		<!--
 		<polyline 
 			points="${kievSick_sick_sicked_data[2]}" 
+				stroke="#77f" stroke-width="30" fill="none" stroke-linejoin="round"/>
+		-->
+		<polyline 
+			points="${getPolylinePoints(
+					data.map((v) => v.sick - v.die - v.cured), allOpts)}" 
 				stroke="#77f" stroke-width="30" fill="none" stroke-linejoin="round"/>
 	`;
 
@@ -177,6 +183,16 @@ svg_chart_2_cover.onmousemove = function(e) {
 
 	moveXCursor(e.offsetX / 6);
 }
+
+svg_chart_1_cover.onwheel = 
+svg_chart_2_cover.onwheel = 
+	function(eo) {
+		if (eo.altKey) {
+			eo.preventDefault();
+			const delta = eo.wheelDelta < 0 ? 30 : 0 < eo.wheelDelta ? -30 : 0;
+			document.querySelector(".overflow-chart-wraper").scrollLeft += delta;
+		}
+	}
 
 function moveXCursor(deyNumFloat) {
 	const 
