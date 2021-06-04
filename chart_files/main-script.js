@@ -138,12 +138,12 @@ chart_1.innerHTML =
 		<!--
 		<polyline 
 			points="${kievSick_sick_sicked_data[2]}" 
-				stroke="#77f" stroke-width="30" fill="none" stroke-linejoin="round"/>
+				stroke="#7bf" stroke-width="30" fill="none" stroke-linejoin="round"/>
 		-->
 		<polyline 
 			points="${getPolylinePoints(
 					data.map((v) => v.sick - v.die - v.cured), allOpts)}" 
-				stroke="#77f" stroke-width="30" fill="none" stroke-linejoin="round"/>
+				stroke="#7bf" stroke-width="30" fill="none" stroke-linejoin="round"/>
 	`;
 
 chart_2.innerHTML = 
