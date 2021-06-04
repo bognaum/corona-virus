@@ -231,27 +231,8 @@ function moveXCursor(deyNumFloat) {
 	chart_2_cursor.innerHTML = `<line x1="${cursorAllX}" y1="3000" x2="${cursorAllX}" y2="-6000" stroke="#fff" stroke-width="10" stroke-dasharray="100 30"/>`;
 }
 
-function getPolylinePoints(data, options={}) {
-	const _ = Object.assign({
-		step: 10,
-		maxY: 100,
-		minY: 100,
-		offsetX: 0,
-		offsetY: 0,
-	}, options);
-	const 
-		min = Math.min(...data),
-		max = Math.max(...data),
-		maxPosetive = (0 < max)? max : 0,
-		maxNegative = (min < 0)? min : 0,
-		kY = Math.min(Math.abs(_.maxY / maxPosetive), Math.abs(_.minY / maxNegative));
-	let str = "";
-	for (let [i,v] of data.entries()) {
-		if (i)
-			str += ", ";
-		str += `${(i * _.step) + _.offsetX} ${(-v * kY) + _.offsetY}`;
-	}
-	return str;
+function getPolylinePoints(data, opts={}) {
+	return getPolylinePointsArr([data], opts)[0];
 }
 
 function getPolylinePointsArr(dataArr, options={}) {
